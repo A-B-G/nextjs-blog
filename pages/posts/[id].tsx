@@ -3,6 +3,19 @@ import Layout from '../../components/layout';
 import { getAllPostsIds, getPostData } from '../../lib/posts';
 import postStyles from '../../styles/Posts.module.css';
 
+
+interface MyParams {
+    params: {id: string}
+}
+interface MyPostData {
+    postData: {
+        id: string;
+        contentHtml: string
+        title: string;
+        date: string;
+    }
+
+}
 export async function getStaticPaths() {
     // paths has an array of paths returned from getAllPostIds
     const paths = getAllPostsIds();
@@ -11,7 +24,7 @@ export async function getStaticPaths() {
         fallback: false
     }
 }
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: MyParams) {
     const postData = await getPostData(params.id);
     return {
         props: {
@@ -20,7 +33,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData }: MyPostData) {
     return (
         <Layout>
             <Head>
@@ -30,7 +43,7 @@ export default function Post({ postData }) {
             <small>{postData.date}</small>
             <br />
             {/* // render the contentHTML */}
-            <div dangerouslySetInnerHTML={{__html: postData.contentHTML}} />
+            <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
         </Layout>
     )
 }
