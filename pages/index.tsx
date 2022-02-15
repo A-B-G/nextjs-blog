@@ -58,7 +58,7 @@ export default function Home( { allPostsData }: MyPostsDataProps ) {
                 <Link href={`/posts/${id}`}>
                 <a>{title}</a>
                 </Link>
-              </h3>
+              </h3>              
               <small>{date}</small>
             </li>
   

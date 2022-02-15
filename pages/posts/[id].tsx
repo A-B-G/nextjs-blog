@@ -10,7 +10,7 @@ interface MyParams {
 interface MyPostData {
     postData: {
         id: string;
-        contentHtml: string
+        contentHTML: string
         title: string;
         date: string;
     }
@@ -36,14 +36,16 @@ export async function getStaticProps({ params }: MyParams) {
 export default function Post({ postData }: MyPostData) {
     return (
         <Layout>
-            <Head>
-                <title>{postData.title}</title>
-            </Head>
-            <h2 className={postStyles.postsHeadingMD}>{postData.title}</h2>
+            <h2 className={postStyles.postsHeadingMD}>
+                {postData.title}
+            </h2>
+            <br />
+            {postData.id} 
+            <br />
             <small>{postData.date}</small>
             <br />
             {/* // render the contentHTML */}
-            <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
+            <div dangerouslySetInnerHTML={{__html: postData.contentHTML}} />
         </Layout>
     )
 }
