@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import utilStyles from '../styles/utils.module.css';
 import { getAllPosts } from '../pages/utilRequests';
 
 type MyPostsDataProps = {
@@ -30,17 +31,23 @@ export default function Login({ allPostsData }: MyPostsDataProps) {
                 <meta name="description" content="Admin login" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            <header className={utilStyles.title}>
             <h1>Login</h1>
-            <label>name</label>
-            <input type="text" placeholder="name" />
-            <ul>
-                {allPostsData.map((d => (
-                    <li>
-                        <h2>{d.title}</h2>
-                        <article>{d.excerptpost}</article>
-                    </li>
-                )))}
-            </ul>
+            </header>
+
+            <main className={utilStyles.main}>
+                <label>name</label>
+                <input type="text" placeholder="name" />
+                <ul className={utilStyles.list}>
+                    {allPostsData.map((d => (
+                        <li>
+                            <h2>{d.title}</h2>
+                            <article>{d.excerptpost}</article>
+                        </li>
+                    )))}
+                </ul>
+            </main>
         </div>
     )
 
