@@ -14,7 +14,6 @@ type MyPostsDataProps = {
 // process the data from getAllPosts INSIDE getStaticProps
 export async function getStaticProps() {
     const allPostsData = await getAllPosts();
-    console.log("allPostsData:", allPostsData);
     // return the data as a props object
     return {
         props: { allPostsData } //array of objects
