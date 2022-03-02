@@ -1,0 +1,15 @@
+export interface MyPostsDataProps {
+    allPostsData: {
+        id: number;
+        date: string;
+        modified?: string;
+        title: string;
+        excerptpost: string;
+        fullpost: string
+    }[]
+  }
+
+  export interface LoginData {
+    username: string;
+    password: string
+  }
