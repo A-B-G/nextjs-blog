@@ -1,21 +1,14 @@
 import Head from 'next/head';
 import Layout from '../../components/layout';
 import { getAllPostsIds, getPostData } from '../../lib/posts';
+import { MyPostData } from '../../interfaceTypes';
 import postStyles from '../../styles/Posts.module.css';
 
 
 interface MyParams {
-    params: {id: string}
+    params: { id: string }
 }
-interface MyPostData {
-    postData: {
-        id: string;
-        contentHTML: string
-        title: string;
-        date: string;
-    }
 
-}
 export async function getStaticPaths() {
     // paths has an array of paths returned from getAllPostIds
     const paths = getAllPostsIds();
