@@ -1,3 +1,11 @@
+export interface MyPostData {
+    postData: {
+        id: string;
+        contentHTML: string
+        title: string;
+        date: string;
+    }
+}
 export interface MyPostsDataProps {
     allPostsData: {
         id: number;
