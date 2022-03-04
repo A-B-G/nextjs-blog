@@ -19,5 +19,6 @@ export interface MyPostsDataProps {
 
   export interface LoginData {
     username: string;
-    password: string
+    password: string;
+    authToken?: string;
   }
