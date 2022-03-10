@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import utilStyles from '../styles/utils.module.css';
-import { getAllPosts, requestLogin, createNewBlog } from '../pages/utilRequests';
+import { getAllPosts, requestLogin, createNewBlog } from '../lib/utilRequests';
 import { MyPostsDataProps } from '../interfaceTypes';
 import { initialVal } from '../hooks/useInputState';
 // import FormInputHook from '../hooks/FormInputHook';
