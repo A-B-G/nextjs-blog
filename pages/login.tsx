@@ -29,7 +29,6 @@ export default function Login({ allPostsData }: MyPostsDataProps) {
         requestLogin(loginData)
         .then((val) => {
             setToken(val);
-            // console.log("token:", token);
             createNewBlog(token);
         })
         resetUsername(" ");
